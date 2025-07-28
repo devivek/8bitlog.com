@@ -233,34 +233,71 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Dark mode toggle (optional)
+    // Dark mode toggle functionality
     const darkModeToggle = document.createElement('button');
-    darkModeToggle.innerHTML = '🌙';
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     darkModeToggle.style.position = 'fixed';
     darkModeToggle.style.top = '20px';
     darkModeToggle.style.right = '20px';
-    darkModeToggle.style.background = 'var(--primary-color)';
-    darkModeToggle.style.color = 'white';
-    darkModeToggle.style.border = 'none';
-    darkModeToggle.style.borderRadius = '50%';
-    darkModeToggle.style.width = '50px';
-    darkModeToggle.style.height = '50px';
+    darkModeToggle.style.background = 'var(--bg-primary)';
+    darkModeToggle.style.color = 'var(--text-primary)';
+    darkModeToggle.style.border = '1px solid var(--border-color)';
+    darkModeToggle.style.width = '40px';
+    darkModeToggle.style.height = '40px';
     darkModeToggle.style.cursor = 'pointer';
-    darkModeToggle.style.fontSize = '20px';
+    darkModeToggle.style.fontSize = '14px';
     darkModeToggle.style.zIndex = '1000';
-    darkModeToggle.style.transition = 'transform 0.3s ease';
-    darkModeToggle.title = 'Toggle dark mode';
+    darkModeToggle.style.fontFamily = 'inherit';
+    darkModeToggle.style.display = 'flex';
+    darkModeToggle.style.alignItems = 'center';
+    darkModeToggle.style.justifyContent = 'center';
+    darkModeToggle.title = 'Toggle dark/light mode';
+
+    // Check for saved theme preference or default to system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
 
     darkModeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        this.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        this.style.transform = 'scale(1.2)';
-        setTimeout(() => {
-            this.style.transform = 'scale(1)';
-        }, 200);
+        if (document.body.classList.contains('dark-mode')) {
+            // Switch to light mode
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            this.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', 'light');
+        } else {
+            // Switch to dark mode
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            this.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('theme', 'dark');
+        }
     });
 
     document.body.appendChild(darkModeToggle);
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        // Only auto-switch if user hasn't manually set a preference
+        if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.body.classList.add('light-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+    });
 
     // Enhanced contact links
     document.querySelectorAll('.contact-item a, .project-links a').forEach(link => {

@@ -57,32 +57,9 @@ body {
 }
 
 .profile-section {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    display: block;
     position: relative;
     z-index: 1;
-}
-
-.profile-image {
-    flex-shrink: 0;
-}
-
-.profile-image img {
-    width: 80px;
-    height: 80px;
-    border-radius: 0;
-    border: 2px solid var(--border-color);
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.profile-image img:hover {
-    border-color: var(--primary-color);
-}
-
-.profile-info {
-    flex: 1;
 }
 
 .name {
@@ -465,9 +442,7 @@ body {
     }
 
     .profile-section {
-        flex-direction: column;
         text-align: left;
-        gap: 1rem;
     }
 
     .name {
@@ -540,11 +515,6 @@ body {
         font-size: 1.6rem;
     }
 
-    .profile-image img {
-        width: 60px;
-        height: 60px;
-    }
-
     .project-header {
         flex-direction: column;
         gap: 0.5rem;
@@ -555,9 +525,21 @@ body {
     }
 }
 
-/* Dark mode support - minimal approach */
+/* Dark mode support - manual toggle */
+body.dark-mode {
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-light: #999999;
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+    --bg-accent: #222222;
+    --border-color: #333333;
+    --primary-color: #ffffff;
+}
+
+/* Automatic dark mode based on system preference */
 @media (prefers-color-scheme: dark) {
-    :root {
+    body:not(.light-mode) {
         --text-primary: #ffffff;
         --text-secondary: #cccccc;
         --text-light: #999999;
@@ -603,15 +585,15 @@ body {
     }
 }
 
-/* Minimal focus styles */
+/* Minimal focus styles and theme transitions */
 a:focus,
 button:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
-/* Remove all animations for minimal approach */
-* {
-    transition: none !important;
-    animation: none !important;
+/* Enable smooth transitions for theme switching only */
+body,
+body * {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
