@@ -182,6 +182,13 @@ body {
     letter-spacing: -1px;
 }
 
+.hero-by {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-md);
+}
+
 .highlight {
     background: linear-gradient(135deg, var(--accent) 0%, #0052cc 100%);
     -webkit-background-clip: text;
