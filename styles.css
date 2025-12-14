@@ -87,6 +87,12 @@ body {
     font-size: 28px;
 }
 
+.logo-image {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
 .logo-text {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #000000 0%, #333333 100%);
