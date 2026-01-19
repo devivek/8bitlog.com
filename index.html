@@ -7,8 +7,425 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Monospace Modern Styling */
+        body {
+            font-family: 'Courier Prime', 'JetBrains Mono', monospace;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            background: none;
+            -webkit-text-fill-color: #1a1a1a;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+        }
+
+        .nav-link {
+            font-family: 'Courier Prime', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        /* Hero Product Showcase */
+        .product-hero {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #f8f8f8 0%, #ffffff 100%);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .product-hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .product-info {
+            text-align: left;
+        }
+
+        .product-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.5rem 1rem;
+            border: 1px solid #1a1a1a;
+            margin-bottom: 1.5rem;
+            background: #ffffff;
+        }
+
+        .product-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-title-with-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-logo-inline {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        .product-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .product-tagline {
+            font-size: 1.1rem;
+            color: #666666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .product-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #1a1a1a;
+        }
+
+        .product-features li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #666666;
+        }
+
+        .playstore-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Courier Prime', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .playstore-btn:hover {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .playstore-btn i {
+            font-size: 1.25rem;
+        }
+
+        .product-screenshot-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-screenshot {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Section Headers */
+        .section-header h2 {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.75rem;
+        }
+
+        .section-header p {
+            font-family: 'Courier Prime', monospace;
+            color: #666666;
+        }
+
+        /* Feature Cards */
+        .feature-card h3,
+        .app-card h3 {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-card p,
+        .app-card p {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        /* App Cards */
+        .app-card {
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Brand Story */
+        .brand-story h2 {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .brand-description p {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        /* CTA */
+        .cta h2 {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta p {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        .availability-info {
+            font-size: 0.9rem;
+            color: #666666;
+            margin: 1rem 0;
+        }
+        }
+
+        /* Footer */
+        .footer h4 {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer p,
+        .footer a,
+        .footer li {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        /* Buttons */
+        .btn {
+            font-family: 'Courier Prime', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Global Coverage Section */
+        .global-coverage {
+            padding: 4rem 2rem;
+            background: #f8f8f8;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .coverage-grid {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+        }
+
+        .country-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .country-card:hover {
+            border-color: #1a1a1a;
+            transform: translateY(-4px);
+        }
+
+        .country-flag {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .country-card h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .country-card p {
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.8rem;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        /* AI Aggregation Section */
+        .ai-aggregation {
+            padding: 4rem 2rem;
+            background: #ffffff;
+        }
+
+        .aggregation-content {
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .aggregation-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .agg-feature {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+            background: #f8f8f8;
+        }
+
+        .agg-icon {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            color: #666666;
+            flex-shrink: 0;
+        }
+
+        .agg-feature h4 {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agg-feature p {
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.9rem;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        /* Download Section */
+        .download-cta {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .playstore-btn.large {
+            font-size: 1.1rem;
+            padding: 1.25rem 3rem;
+        }
+
+        .download-note {
+            margin-top: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.85rem;
+            color: #666666;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .coverage-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-hero-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .product-info {
+                text-align: center;
+                order: 2;
+            }
+
+            .product-screenshot-container {
+                order: 1;
+            }
+
+            .product-title {
+                font-size: 1.75rem;
+            }
+
+            .product-features {
+                text-align: left;
+                max-width: 300px;
+                margin: 0 auto 2rem auto;
+            }
+
+            .coverage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .country-card:last-child {
+                grid-column: span 2;
+                max-width: 50%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .coverage-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .country-card:last-child {
+                grid-column: span 1;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -27,256 +444,187 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                Local News, <span class="highlight">No Bias</span>
-                <div class="hero-by">By 8bitlog</div>
-            </h1>
-            <p class="hero-subtitle">
-                Aggregated from multiple sources via AI. Get comprehensive news coverage in your local language without editorial bias or corporate influence.
-            </p>
-            <div class="hero-cta">
-                <a href="#apps" class="btn btn-primary">Download Now</a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
+    <!-- Product Hero: AudioBrief -->
+    <section class="product-hero">
+        <div class="product-hero-inner">
+            <div class="product-info">
+                <span class="product-badge">Featured Product</span>
+                <div class="product-title-with-logo">
+                    <img src="assets/audio-brief-logo.png" alt="AudioBrief Logo" class="product-logo-inline">
+                    <h1 class="product-title">AudioBrief</h1>
+                </div>
+                <p class="product-tagline">
+                    Your daily news, narrated. AI aggregates stories from 100+ sources 
+                    across USA, Canada, India, Australia & UK—then reads them to you. 
+                    No reading required. No bias included.
+                </p>
+                <ul class="product-features">
+                    <li>Professional AI audio narration</li>
+                    <li>100+ sources, one briefing</li>
+                    <li>USA, Canada, India, AU, UK coverage</li>
+                    <li>AI-powered story deduplication</li>
+                    <li>Listen offline, anytime</li>
+                </ul>
+                <a href="https://play.google.com/store/apps/details?id=listen.news.audiobrief" target="_blank" class="playstore-btn">
+                    <i class="fab fa-google-play"></i>
+                    Get it on Google Play
+                </a>
             </div>
-            <div class="hero-illustration">
-                <div class="illustration-box">
-                    <i class="fas fa-brain"></i>
-                </div>
-            </div>
-        </div>
-        <div class="hero-background"></div>
-    </section>
-
-    <!-- Core Feature: Multiple Source Aggregation -->
-    <section class="aggregation-highlight">
-        <div class="aggregation-container">
-            <div class="aggregation-badge">Core Feature</div>
-            <h2>Multiple Source Aggregation</h2>
-            <p class="aggregation-subtitle">Intelligent news curation from diverse sources, all in your language</p>
-            
-            <div class="sources-showcase">
-                <div class="source-item">
-                    <div class="source-icon">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h4>News Outlets</h4>
-                    <p>Major publications & local journalists</p>
-                </div>
-                
-                <div class="source-item">
-                    <div class="source-icon">
-                        <i class="fas fa-rss"></i>
-                    </div>
-                    <h4>RSS Feeds</h4>
-                    <p>Real-time feeds from trusted sources</p>
-                </div>
-                
-                <div class="source-item">
-                    <div class="source-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4>Social Media</h4>
-                    <p>Breaking updates from verified accounts</p>
-                </div>
-                
-                <div class="source-item">
-                    <div class="source-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h4>Web Sources</h4>
-                    <p>Curated from 100+ quality websites</p>
-                </div>
-            </div>
-            
-            <div class="aggregation-benefits">
-                <div class="benefit">
-                    <span class="benefit-icon">✓</span>
-                    <span>One app, countless perspectives</span>
-                </div>
-                <div class="benefit">
-                    <span class="benefit-icon">✓</span>
-                    <span>AI-deduplication of identical stories</span>
-                </div>
-                <div class="benefit">
-                    <span class="benefit-icon">✓</span>
-                    <span>Cross-source verification</span>
-                </div>
-                <div class="benefit">
-                    <span class="benefit-icon">✓</span>
-                    <span>Comprehensive coverage, no bias</span>
-                </div>
+            <div class="product-screenshot-container">
+                <img src="assets/screen-shot-audiobrief.png" alt="AudioBrief App Screenshot" class="product-screenshot">
             </div>
         </div>
     </section>
 
-    <!-- Brand Story Section -->
-    <section class="brand-story">
-        <div class="brand-container">
-            <h2>About 8bitlog</h2>
-            <div class="brand-description">
-                <p>
-                    8bitlog is reimagining how people consume local news. We believe that every community deserves access to comprehensive, unbiased information from multiple reliable sources—without corporate influence or editorial bias.
-                </p>
-                <p>
-                    In a world of algorithmic echo chambers and sensationalized headlines, we've built an AI-powered platform that aggregates local news from diverse sources, presenting you with complete coverage of what matters in your community. Our intelligent system deduplicates stories, cross-verifies information, and delivers news in your local language—ensuring you get the full picture, not just one perspective.
-                </p>
-                <p>
-                    We're committed to one simple principle: <strong>local journalism, zero bias</strong>. Whether you speak Telugu, Hindi, Kannada, or any other language, 8bitlog connects you with the stories that shape your neighborhood, city, and region—with complete transparency and editorial independence.
-                </p>
-                <p>
-                    8bitlog isn't just an app. It's your community's voice, amplified fairly.
-                </p>
+    <!-- Global Coverage Section -->
+    <section class="global-coverage">
+        <div class="section-header">
+            <h2>Global Coverage</h2>
+            <p>News from where you are, wherever you are</p>
+        </div>
+        
+        <div class="coverage-grid">
+            <div class="country-card">
+                <div class="country-flag">🇺🇸</div>
+                <h3>United States</h3>
+                <p>National, state & local news from coast to coast</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇨🇦</div>
+                <h3>Canada</h3>
+                <p>Coverage across all provinces and territories</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇮🇳</div>
+                <h3>India</h3>
+                <p>News in English, Hindi, and regional languages</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇦🇺</div>
+                <h3>Australia</h3>
+                <p>Stories from Sydney to Perth and beyond</p>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇬🇧</div>
+                <h3>United Kingdom</h3>
+                <p>UK-wide coverage including regional news</p>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Audio Narration Feature -->
     <section id="features" class="features">
         <div class="section-header">
-            <h2>Why Choose 8bitlog?</h2>
-            <p>Intelligent news delivery for the modern reader</p>
+            <h2>Listen to Your News</h2>
+            <p>Professional audio narration powered by AI</p>
         </div>
         
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-globe"></i>
+                    <i class="fas fa-headphones"></i>
                 </div>
-                <h3>Local Languages</h3>
-                <p>News delivered in Telugu, Hindi, Tamil, and more. Breaking language barriers to keep you informed.</p>
+                <h3>Audio Narration</h3>
+                <p>Every story read aloud with natural AI voices. Perfect for commutes, workouts, or multitasking.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-play-circle"></i>
                 </div>
-                <h3>AI-Powered Curation</h3>
-                <p>Smart algorithms learn your preferences and deliver personalized news stories tailored just for you.</p>
+                <h3>Daily Briefings</h3>
+                <p>Start your day with curated audio summaries. Get caught up in minutes, not hours.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-tachometer-alt"></i>
                 </div>
-                <h3>Real-Time Updates</h3>
-                <p>Get breaking news the moment it happens. Stay ahead with instant notifications on topics you care about.</p>
+                <h3>Adjustable Speed</h3>
+                <p>Control playback speed from 0.5x to 2x. Listen at your own pace.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-book"></i>
+                    <i class="fas fa-download"></i>
                 </div>
-                <h3>Current Affairs</h3>
-                <p>Daily updates on current affairs, perfect for students and professionals staying informed on important topics.</p>
+                <h3>Offline Listening</h3>
+                <p>Download briefings for offline access. Stay informed even without internet.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-volume-up"></i>
                 </div>
-                <h3>Trusted Sources</h3>
-                <p>Curated from reliable sources to ensure you get accurate, factual news you can trust.</p>
+                <h3>Background Play</h3>
+                <p>Keep listening while using other apps. News continues in the background.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-mobile-alt"></i>
+                    <i class="fas fa-moon"></i>
                 </div>
-                <h3>On the Go</h3>
-                <p>Lightweight, fast app that works seamlessly on any device. Read offline anytime, anywhere.</p>
+                <h3>Sleep Timer</h3>
+                <p>Set a timer to stop playback. Perfect for listening before bed.</p>
             </div>
         </div>
     </section>
 
-    <!-- Apps Section -->
-    <section id="apps" class="apps">
+    <!-- AI Aggregation Section -->
+    <section class="ai-aggregation">
         <div class="section-header">
-            <h2>Our Applications</h2>
-            <p>Choose the perfect app for your news needs</p>
+            <h2>Multiple Source Aggregation</h2>
+            <p>AI-powered news curation from hundreds of sources</p>
         </div>
-
-        <div class="apps-container">
-            <!-- App Card 1 -->
-            <div class="app-card">
-                <div class="app-header">
-                    <div class="app-icon">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h3>Telugu News</h3>
-                </div>
-                <p class="app-description">
-                    Comprehensive news coverage in Telugu, bringing you the latest from politics, sports, entertainment, and more.
-                </p>
-                <div class="app-highlights">
-                    <div class="highlight-item">
-                        <i class="fas fa-check"></i>
-                        <span>Latest Telugu News</span>
-                    </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-check"></i>
-                        <span>Local & National Coverage</span>
-                    </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-check"></i>
-                        <span>Personalized Feed</span>
-                    </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-check"></i>
-                        <span>Offline Reading</span>
+        
+        <div class="aggregation-content">
+            <div class="aggregation-features">
+                <div class="agg-feature">
+                    <span class="agg-icon">></span>
+                    <div>
+                        <h4>100+ News Sources</h4>
+                        <p>We aggregate from major publications, local outlets, and independent journalists</p>
                     </div>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=news.telugu.app" target="_blank" class="btn btn-primary btn-full">
-                    <i class="fab fa-google-play"></i>
-                    Download on Google Play
-                </a>
-            </div>
-
-            <!-- App Card 2 -->
-            <div class="app-card">
-                <div class="app-header">
-                    <div class="app-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Current Affairs for Students</h3>
-                </div>
-                <p class="app-description">
-                    Daily current affairs updates tailored for students preparing for exams and staying informed about the world.
-                </p>
-                <div class="app-highlights">
-                    <div class="highlight-item">
-                        <i class="fas fa-check"></i>
-                        <span>Daily Updates</span>
-                    </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-check"></i>
-                        <span>Exam-Ready Content</span>
-                    </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-check"></i>
-                        <span>Analysis & Insights</span>
-                    </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-check"></i>
-                        <span>Quick Summaries</span>
+                <div class="agg-feature">
+                    <span class="agg-icon">></span>
+                    <div>
+                        <h4>AI Deduplication</h4>
+                        <p>Same story from 10 sources? Our AI combines them into one comprehensive summary</p>
                     </div>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=current.affairs.daily2026" target="_blank" class="btn btn-primary btn-full">
-                    <i class="fab fa-google-play"></i>
-                    Download on Google Play
-                </a>
+                <div class="agg-feature">
+                    <span class="agg-icon">></span>
+                    <div>
+                        <h4>Cross-Source Verification</h4>
+                        <p>Stories are verified across multiple sources to ensure accuracy</p>
+                    </div>
+                </div>
+                <div class="agg-feature">
+                    <span class="agg-icon">></span>
+                    <div>
+                        <h4>No Bias, No Echo Chamber</h4>
+                        <p>Get perspectives from across the spectrum, not just one viewpoint</p>
+                    </div>
+                </div>
+                <div class="agg-feature">
+                    <span class="agg-icon">></span>
+                    <div>
+                        <h4>Real-Time Updates</h4>
+                        <p>Breaking news aggregated and summarized as it happens</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section id="apps" class="cta">
         <div class="cta-content">
-            <h2>Stay Informed. Stay Unbiased.</h2>
-            <p>Download 8bitlog today and get access to local news from multiple sources, powered by AI, completely unbiased</p>
-            <a href="#apps" class="btn btn-light">Get Started</a>
+            <h2>News You Can Listen To</h2>
+            <p>AudioBrief delivers AI-curated news from 100+ sources, narrated for your ears. Global coverage, zero bias.</p>
+            <p class="availability-info">Available now on Android • Free to download • No subscription required</p>
+            <a href="https://play.google.com/store/apps/details?id=listen.news.audiobrief" target="_blank" class="btn btn-light">Download AudioBrief</a>
         </div>
     </section>
 
@@ -303,14 +651,9 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 8bitlog. All rights reserved.</p>
+            <p>&copy; 2026 8bitlog. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
     <script src="script.js"></script>
 </body>
 </html>
