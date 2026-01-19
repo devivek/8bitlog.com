@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - 8bitlog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern Privacy Policy Styles */
+        body.privacy-page {
+            font-family: 'Courier Prime', 'JetBrains Mono', monospace;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .privacy-header {
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            text-shadow: none;
+        }
+
+        .privacy-header .last-updated {
+            font-size: 0.9rem;
+            color: #666666;
+            opacity: 1;
+        }
+
+        .privacy-header .ascii-art {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            color: #999999;
+            opacity: 1;
+            white-space: pre;
+        }
+
+        .privacy-content {
+            line-height: 1.9;
+        }
+
+        .privacy-content h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            border-left: 4px solid #000000;
+            padding-left: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .privacy-content h3 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+        }
+
+        .privacy-content h4 {
+            font-size: 1rem;
+            color: #1a1a1a;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .privacy-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content li {
+            margin-bottom: 0.8rem;
+            color: #1a1a1a;
+        }
+
+        .privacy-content li strong {
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+
+        .privacy-content p {
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .privacy-content strong {
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            border: 1px solid #e0e0e0;
+            padding: 1rem;
+            margin: 1rem 0;
+            background-color: #f8f8f8;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+        }
+
+        .divider {
+            border-bottom: 1px solid #e0e0e0;
+            margin: 2rem 0;
+        }
+
+        .contact-section {
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            margin-top: 0;
+        }
+
+        .contact-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid #1a1a1a;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+
+        .back-link:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-list {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 1rem;
+        }
+
+        .app-list li {
+            margin-left: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-list li:before {
+            content: "> ";
+            color: #666666;
+            margin-right: 0.5rem;
+        }
+
+        /* Navigation styling for privacy page */
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-container {
+            border-bottom: none;
+        }
+
+        .logo-text {
+            background: transparent;
+            -webkit-background-clip: unset;
+            color: #1a1a1a;
+            font-family: 'Courier Prime', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #1a1a1a;
+            text-shadow: none;
+        }
+
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 1rem;
+                margin: 1rem 0.5rem;
+            }
+
+            .privacy-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .privacy-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .privacy-content {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="privacy-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">8bitlog</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Content -->
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">> LAST UPDATED: JANUARY 19, 2026</p>
+        </div>
+
+        <div class="privacy-content">
+            <p>
+                <strong>This updated Privacy Policy has been consolidated to cover your entire suite of apps: AudioBrief, Telugu News App, and Current Affairs 2026. We have streamlined the language to ensure compliance with 2026 standards for GDPR (EU), CCPA (California), and the DPDP Act (India).</strong>
+            </p>
+
+            <div class="divider"></div>
+
+            <h2>[ INFORMATION ]</h2>
+            <p>
+                This Privacy Policy applies to the following mobile applications (collectively referred to as "the Apps") developed and published by <strong>8bitlog</strong>:
+            </p>
+            <ul class="app-list">
+                <li>AudioBrief</li>
+                <li>Telugu News App</li>
+                <li>Current Affairs 2026</li>
+            </ul>
+            <p>
+                At 8bitlog, we are committed to protecting your privacy. This document explains how we handle information when you use our services.
+            </p>
+
+            <div class="divider"></div>
+
+            <h2>[ 1. INFORMATION WE COLLECT ]</h2>
+            <p>The Apps are designed to function without requiring you to create an account or provide personal details.</p>
+
+            <div class="highlight-box">
+                <h4>> NO PERSONALLY IDENTIFIABLE INFORMATION (PII)</h4>
+                <p>We do not collect, store, or request your name, email address, phone number, or precise GPS location.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>> NO SENSITIVE DATA</h4>
+                <p>We do not access your contacts, photos, microphone (unless explicitly used for search in supported versions), or files.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>> ON-DEVICE DATA</h4>
+                <p>Preferences (such as bookmarked articles or language settings) are stored locally on your device and are not uploaded to our servers.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>[ 2. THIRD-PARTY SERVICES ]</h2>
+            <p>
+                We partner with trusted third-party providers to maintain app performance and monetize our services. These partners may collect non-personal, pseudonymized data:
+            </p>
+
+            <div class="highlight-box">
+                <h4>> GOOGLE ADMOB</h4>
+                <p>Collects device identifiers (Android Advertising ID) and approximate location to serve relevant ads.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>> FIREBASE ANALYTICS</h4>
+                <p>Provides aggregated, anonymous insights into how users interact with the Apps (e.g., most-read categories).</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>> FIREBASE CRASHLYTICS</h4>
+                <p>Collects technical logs (device model, OS version) to help us fix bugs and crashes.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>> GOOGLE PLAY BILLING</h4>
+                <p>Processes in-app purchases. We never see or store your credit card or banking details.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>[ 3. GLOBAL PRIVACY COMPLIANCE ]</h2>
+
+            <h3>>> INDIA: DPDP ACT (2023/2026)</h3>
+            <p>We comply with the <strong>Digital Personal Data Protection Act</strong>.</p>
+            <ul>
+                <li>We act as a Data Fiduciary only for the minimal technical data required to run the Apps.</li>
+                <li>Since no PII is collected by 8bitlog, we do not share or sell Indian users' personal data.</li>
+            </ul>
+
+            <h3>>> EUROPEAN UNION: GDPR</h3>
+            <p>For users in the European Economic Area (EEA), we use Google's <strong>User Messaging Platform (UMP)</strong> to manage consent.</p>
+            <ul>
+                <li>You can choose between Personalized and Non-Personalized ads.</li>
+                <li>Consent can be withdrawn at any time via the "Privacy Settings" or "Manage Consent" menu within the Apps.</li>
+            </ul>
+
+            <h3>>> CALIFORNIA: CCPA/CPRA</h3>
+            <p>California residents have the right to opt-out of the "sale" or "sharing" of personal information. While we do not sell data for money, the use of advertising identifiers is considered "sharing." You may opt-out via your Android device settings (Settings > Google > Ads > Opt out of Ads Personalization).</p>
+
+            <div class="divider"></div>
+
+            <h2>[ 4. PERMISSIONS REQUESTED ]</h2>
+            <p>To provide our services, the Apps may request the following permissions:</p>
+            <ul>
+                <li><strong>INTERNET:</strong> To fetch the latest news and audio content.</li>
+                <li><strong>ACCESS_NETWORK_STATE:</strong> To verify if you are connected to Wi-Fi or Mobile Data.</li>
+                <li><strong>FOREGROUND_SERVICE</strong> (AudioBrief only): To allow audio playback to continue while you use other apps or lock your screen.</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <h2>[ 5. CHILDREN'S PRIVACY ]</h2>
+            <p>
+                Our Apps are intended for a general audience. We do not knowingly collect information from children under the age of 13 (or 16 in certain jurisdictions). If you believe a child has provided us with data, please contact us immediately.
+            </p>
+
+            <div class="divider"></div>
+
+            <h2>[ 6. DATA SECURITY ]</h2>
+            <p>
+                We utilize industry-standard <strong>HTTPS encryption</strong> for all data transmission between the Apps and our content servers, ensuring that your news feed and app interactions remain secure from interception.
+            </p>
+
+            <div class="divider"></div>
+
+            <h2>[ 7. CHANGES TO THIS POLICY ]</h2>
+            <p>
+                We may update this Privacy Policy to reflect changes in our practices or legal requirements. We will notify users by updating the "Last Updated" date at the top of this policy and via a notice within the Apps.
+            </p>
+
+            <div class="divider"></div>
+
+            <h2>[ 8. CONTACT INFORMATION ]</h2>
+            <p>
+                If you have any questions regarding this policy or wish to exercise your data rights, please contact us:
+            </p>
+
+            <div class="contact-section">
+                <h3>8bitlog Support</h3>
+                <p><strong>Email:</strong> admin@8bitlog.com</p>
+                <p><strong>Alternative:</strong> contact.xaapes@gmail.com</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <p style="text-align: center; margin-top: 3rem; font-size: 0.9rem;">
+                > SYSTEM STATUS: OPERATIONAL
+                <br>
+                > ENCRYPTION: ENABLED
+                <br>
+                > POLICY VERSION: 2026.01
+            </p>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="index.html" class="back-link">[ RETURN HOME ]</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
